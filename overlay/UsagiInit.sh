@@ -5,3 +5,4 @@ sleep 3s
 export HTTP_PROXY=socks5://127.0.0.1:1055
 export HTTPS_PROXY=socks5://127.0.0.1:1055
 /usr/local/bin/cloudflared tunnel --no-autoupdate --loglevel error run --token $CLOUDFLARE_TOKEN > /dev/null &
+/HealthCheck-Go &
