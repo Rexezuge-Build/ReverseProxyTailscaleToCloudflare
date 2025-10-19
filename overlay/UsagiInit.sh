@@ -4,4 +4,4 @@ sleep 3s
 /usr/bin/tailscale up --auth-key $TS_AUTHKEY
 export HTTP_PROXY=socks5://127.0.0.1:1055
 export HTTPS_PROXY=socks5://127.0.0.1:1055
-/usr/local/bin/cloudflared tunnel --no-autoupdate --loglevel error --token $CLOUDFLARE_TOKEN > /dev/null &
+/usr/local/bin/cloudflared tunnel --no-autoupdate --loglevel error run --token $CLOUDFLARE_TOKEN > /dev/null &
