@@ -1,6 +1,6 @@
 #!/UsagiInit
 /usr/sbin/tailscaled -no-logs-no-support --tun=userspace-networking --socks5-server=localhost:1055 > /dev/null 2> /dev/null &
-sleep 30s
+sleep 10s
 /usr/bin/tailscale up --auth-key $TS_AUTHKEY --accept-dns=false --accept-routes=false
 export HTTP_PROXY=socks5://127.0.0.1:1055
 export HTTPS_PROXY=socks5://127.0.0.1:1055
