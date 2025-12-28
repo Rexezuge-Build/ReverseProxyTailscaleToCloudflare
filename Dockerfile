@@ -14,7 +14,7 @@ COPY --from=health-check-go /HealthCheck-Go /HealthCheck-Go
 
 RUN apk update && apk add curl
 
-RUN curl -fsSL https://tailscale.com/install.sh | sh
+RUN (curl -fsSL https://tailscale.com/install.sh | sh) || true
 
 ADD overlay/ .
 
