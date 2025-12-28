@@ -12,7 +12,7 @@ COPY --from=usagi-init /UsagiInit /UsagiInit
 
 COPY --from=health-check-go /HealthCheck-Go /HealthCheck-Go
 
-RUN apk update && apk add curl
+RUN apk update && apk add --no-cache curl
 
 RUN (curl -fsSL https://tailscale.com/install.sh | sh) || true
 
