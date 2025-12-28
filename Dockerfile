@@ -12,15 +12,9 @@ COPY --from=usagi-init /UsagiInit /UsagiInit
 
 COPY --from=health-check-go /HealthCheck-Go /HealthCheck-Go
 
-RUN apt update && apt install -y --no-install-recommends curl ca-certificates
+RUN apk update && apk add curl
 
 RUN curl -fsSL https://tailscale.com/install.sh | sh
-
-RUN apt clean \
- && apt autoremove --purge -y curl\
- && apt autoremove --purge apt --allow-remove-essential -y \
- && rm -rf /var/log/apt /etc/apt \
- && rm -rf /var/lib/{apt,dpkg,cache,log}/
 
 ADD overlay/ .
 
