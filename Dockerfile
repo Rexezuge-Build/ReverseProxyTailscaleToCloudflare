@@ -4,7 +4,7 @@ FROM rexezugedockerutils/usagi-init:release AS usagi-init
 
 FROM rexezugedockerutils/health-check-go AS health-check-go
 
-FROM debian:12-slim AS runtime
+FROM alpine AS runtime
 
 COPY --from=cloudflared /cloudflared /usr/local/bin/cloudflared
 
