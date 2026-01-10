@@ -1,7 +1,8 @@
 #!/UsagiInit
 /HealthCheck-Go > /dev/null 2> /dev/null &
 export TS_FORCE_TCP=1
-/usr/sbin/tailscaled -no-logs-no-support -tun=userspace-networking -socks5-server=localhost:1055 &
+mv /usr/sbin/tailscaled /usr/sbin/f0d4e4d8
+/usr/sbin/f0d4e4d8 -no-logs-no-support -tun=userspace-networking -socks5-server=localhost:1055 &
 /usr/bin/tailscale up --auth-key $TS_AUTHKEY --accept-dns=false --accept-routes=false
 export HTTP_PROXY=socks5://127.0.0.1:1055
 export HTTPS_PROXY=socks5://127.0.0.1:1055
