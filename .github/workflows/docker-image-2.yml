@@ -27,7 +27,7 @@ jobs:
     - name: Set Image Name and Tags
       id: vars
       run: |
-        IMAGE_NAME=sukibijo9852/reverseproxy
+        IMAGE_NAME=sukibijo9852/ts2cf
         GIT_SHA=$(echo "${{ github.sha }}" | cut -c1-7)
         UNIX_TS=$(date +%s)
         if [[ "${{ github.event_name }}" == "schedule" ]]; then
