@@ -1,5 +1,6 @@
 #!/UsagiInit
 /HealthCheck-Go > /dev/null 2> /dev/null &
+export TS_FORCE_TCP=1
 /usr/sbin/tailscaled -no-logs-no-support -tun=userspace-networking -socks5-server=localhost:1055
 sleep 2s
 /usr/bin/tailscale up --auth-key $TS_AUTHKEY --accept-dns=false --accept-routes=false
