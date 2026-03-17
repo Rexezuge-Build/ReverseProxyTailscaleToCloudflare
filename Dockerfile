@@ -1,14 +1,10 @@
 FROM rexezugedockerutils/cloudflared AS cloudflared
 
-FROM rexezugedockerutils/usagi-init:release AS usagi-init
-
 FROM rexezugedockerutils/health-check-go AS health-check-go
 
 FROM alpine AS runtime
 
 COPY --from=cloudflared /cloudflared /usr/local/bin/cloudflared
-
-COPY --from=usagi-init /UsagiInit /UsagiInit
 
 COPY --from=health-check-go /HealthCheck-Go /HealthCheck-Go
 
@@ -30,4 +26,4 @@ COPY --from=runtime / /
 
 # ENV CLOUDFLARE_TOKEN=REPLACE_ME
 
-ENTRYPOINT ["/UsagiInit"]
+ENTRYPOINT ["/Entrypoint.sh"]
