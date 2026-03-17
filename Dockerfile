@@ -12,8 +12,6 @@ RUN apk update && apk add --no-cache curl
 
 RUN (curl -fsSL https://tailscale.com/install.sh | sh) || true
 
-RUN apk del curl
-
 RUN rm -rf /var/cache/apk/*
 
 ADD overlay/ .
