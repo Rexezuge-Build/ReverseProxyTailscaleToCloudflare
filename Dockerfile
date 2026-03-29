@@ -20,8 +20,4 @@ FROM scratch
 
 COPY --from=runtime / /
 
-# ENV TS_AUTHKEY=REPLACE_ME
-
-# ENV CLOUDFLARE_TOKEN=REPLACE_ME
-
 ENTRYPOINT ["/Entrypoint.sh"]
